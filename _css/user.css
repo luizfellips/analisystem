@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+* {
+    font-family: 'Lato',sans-serif;
+}
+
+.bg-primary-color{
+    background-color: white;
+}
+
+.bg-secondary-color{
+    background-color: #bebebe56;
+}
+
+.bg-dark-color{
+    background-color: #050505;
+}
+
+.primary-color {
+    color: #050505;
+}
+
+.secondary-color{
+    color: #444444;
+}
+
+
+.navbar .bi{
+    font-size: 5em;
+    padding-right: 0.3em;
+    margin-bottom: 13px;
+}
+.navbar .title{
+    border-bottom: 2px solid black;
+}
+
+#container-marca{
+    padding-left: 1.3em;
+}
+.navbar{
+    padding: 0;
+    border-bottom: 1px solid #7a7a7a;
+}
+#navbar a.active{
+    border-bottom: 1px black solid;
+}
+#navbar a:hover{
+    color: #000000;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+
+.dropdown-item:hover{
+    background-color: rgb(255, 91, 91);
+    transition: 0.3s;
+}
+
+/*interface do user */
+.wrapper{
+    margin-top: 13.8em;
+}
+
+.title-user{
+    font-weight: bolder;
+    border-bottom: 1px #7a7a7a solid;
+}
+
+.title{
+    font-weight: bolder;
+}
+
+#usuario{
+    width: 400px;
+    padding: 30px;
+    border: 1px #7a7a7a solid;
+    border-radius: 35px;
+    font-size: 2em;
+}
+#usuario:hover{
+    border-color: #00d9ff;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 195, 255, 0.6);
+}
+
+/*infos gerais vendas*/
+
+.sellings{
+    font-size: 2.5em;
+}
+
+/*infos gerais segunda linha*/
+
+.billing-title{
+    margin-top: 13px;
+    padding-left: 12px;
+}
+.billings{
+    padding-left: 10px;
+}

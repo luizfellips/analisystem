@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+* {
+    font-family: 'Lato',sans-serif;
+}
+
+.bg-primary-color{
+    background-color: white;
+}
+
+.bg-secondary-color{
+    background-color: #bebebe56;
+}
+
+.bg-dark-color{
+    background-color: #050505;
+}
+
+.primary-color {
+    color: #050505;
+}
+
+.secondary-color{
+    color: #444444;
+}
+
+
+.navbar .bi{
+    font-size: 5em;
+    padding-right: 0.3em;
+    margin-bottom: 13px;
+}
+.navbar .title{
+    border-bottom: 2px solid black;
+}
+
+#container-marca{
+    padding-left: 1.3em;
+}
+.navbar{
+    padding: 0;
+    border-bottom: 1px solid #7a7a7a;
+}
+#navbar a.active{
+    border-bottom: 1px black solid;
+}
+#navbar a:hover{
+    color: #000000;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+
+.dropdown-item:hover{
+    background-color: rgb(255, 91, 91);
+    transition: 0.3s;
+}
+/*table*/ 
+
+section{
+    margin-top: 13.8em;
+}
+
+#tabela-produtos {
+    position: relative;
+    border-collapse: collapse;
+    border: 1px black solid;
+    width: 80%;
+    margin: 15px auto;
+}
+
+#header-fixed{
+    position: sticky;
+    top: 190px;
+
+}
+
+/*Informações*/
+.products, .informations{
+    width: 80%;
+    margin: auto;
+    border-bottom: 1px black solid;
+}
+
+#titulo-quantidade, #titulo-codigo{
+    margin-top: 21.7px;
+}
+#codigo,#quantidade{
+    margin-left: 1em;
+    width: 6em;
+}
+.subtitle{
+    border: 1px black solid;
+}
+/*config inputs*/
+#cadastro-de-produtos{
+    border-bottom: 1px black #7a7a7a;
+}
+.caixa {
+    display: block;
+    margin: auto;
+    width: 16em;
+}
+.botao {
+    display: block;
+    margin: auto;
+}
+/*formulario*/
+#Quantidade {
+    display: inline-block;
+}
+#qtd, #pacote {
+    display: inline-block;
+    width: 115px;
+    margin: auto;
+}
+#qtd {
+    margin-left: 40px;
+}
+.form-control{
+    width: 250px;
+    margin: auto;
+}
+
+
+.titulo-fornecedor{
+border-bottom: 1px black solid;
+}
+
+#fornecedor, #contact-number{
+    margin-left: 0px;
+}
+.btn{
+    margin: auto;
+    width: 20%;
+}
+.first-column{
+    border-right: 1px black solid;
+}
+
+.distributor{
+    margin-top: 10px;
+}
+
+/**/
+
+#titulo-total,#total{
+    margin-top: 0.5em;
+    font-size: 3em;
+}
+#total{
+    margin-left: 2em;
+    width: 7.7em;
+    color: rgb(0, 0, 0);
+}
+.separator{
+    border-bottom: 1px black solid;
+}
+@-webkit-keyframes flip-2-hor-bottom-1{0%{-webkit-transform:translateY(0) rotateX(0);transform:translateY(0) rotateX(0);-webkit-transform-origin:50% 100%;transform-origin:50% 100%}100%{-webkit-transform:translateY(100%) rotateX(180deg);transform:translateY(100%) rotateX(180deg);-webkit-transform-origin:50% 0;transform-origin:50% 0}}@keyframes flip-2-hor-bottom-1{0%{-webkit-transform:translateY(0) rotateX(0);transform:translateY(0) rotateX(0);-webkit-transform-origin:50% 100%;transform-origin:50% 100%}100%{-webkit-transform:translateY(100%) rotateX(180deg);transform:translateY(100%) rotateX(180deg);-webkit-transform-origin:50% 0;transform-origin:50% 0}}
+.flip-2-hor-bottom-1{-webkit-animation:flip-2-hor-bottom-1 .5s;animation:flip-2-hor-bottom-1 .5s}
+.flip-2-hor-bottom-1 > a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #000000;
+}
+.flip-2-hor-bottom-1 {
+    text-transform: uppercase;
+    background-color: #7a7a7a;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    margin: auto;
+}

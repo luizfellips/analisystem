@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+* {
+    font-family: 'Lato',sans-serif;
+}
+
+body{
+    background-color: #444444;
+}
+
+.bg-primary-color{
+    background-color: rgb(255, 255, 255);
+}
+
+.bg-secondary-color{
+    background-color: #00000056;
+    color: white;
+}
+
+.bg-dark-color{
+    background-color: #1f1f1f;
+    color: rgb(255, 101, 101);
+}
+
+.primary-color {
+    color: #050505;
+}
+
+.secondary-color{
+    color: #444444;
+}
+
+/*navbar*/
+
+
+.navbar .bi{
+    font-size: 5em;
+    padding-right: 0.3em;
+    margin-bottom: 13px;
+}
+.navbar .title{
+    border-bottom: 2px solid rgb(255, 72, 72);
+}
+
+#container-marca{
+    padding-left: 1.3em;
+}
+.navbar{
+    padding: 0;
+    border-bottom: 1px solid rgb(255, 72, 72);
+    background-color: #444444;
+    color: rgb(255, 72, 72);
+}
+#navbar a.active{
+    color: white;
+    border-bottom: 1px rgb(255, 72, 72) solid;
+}
+#navbar a:hover{
+    color: #ff5353;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+
+.dropdown-item:hover{
+    background-color: rgb(255, 91, 91);
+    transition: 0.3s;
+}
+.nav-link {
+    color: white;
+}
+/*table*/ 
+
+section{
+    margin-top: 13.8em;
+}
+
+.containermain{
+    border: 1px red solid;
+}
+
+#tabela-produtos {
+    position: relative;
+    border-collapse: collapse;
+    border: 1px rgb(0, 0, 0) solid;
+    margin-top: 1.875em;
+}
+
+#header-fixed{
+    position: sticky;
+    top: 190px;
+}
+
+/*Informações*/
+.products,.informations{
+    width: 80%;
+    margin: 0px 0px 12px 50px;
+    border-bottom: 1px rgb(255, 0, 0) solid;
+}
+.user{
+    font-weight: 800;
+}
+#usuario{
+    font-size: 1.2em;
+    font-weight: 700;
+    border: 1px #ffffff solid;
+    border-radius: 12px;
+
+}
+
+#titulo-quantidade, #titulo-codigo{
+    margin-top: 21.7px;
+}
+#codigo,#quantidade{
+    margin-left: 1em;
+    width: 6em;
+}
+.subtitle{
+    border: 1px rgb(255, 255, 255) solid;
+    border-radius: 10px;
+}
+/*config input*/
+#qtd{
+    width: 70%;
+    margin-left: 35px;
+    border: 2px rgb(255, 255, 255) solid;
+    font-size: 1.3em;
+    transition: 0.2s;
+}
+#qtd:hover{
+    background-color: white;
+    color: black;
+}
+
+#titulo-total,#total{
+    margin-top: 0.5em;
+    font-size: 3em;
+}
+#total{
+    margin-left: 2em;
+    width: 7.7em;
+}
+.separator{
+    border-bottom: 1px rgb(253, 0, 0) solid;
+}
+
+#payment{
+    margin-left:50px;
+    width: 80%;
+    border: 1px rgb(255, 255, 255) solid;
+    font-size: 1.1em;
+}
