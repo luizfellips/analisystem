@@ -19,9 +19,7 @@
      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" 
      crossorigin="anonymous">
      <!-- css do projeto -->
-     <link 
-     rel="stylesheet"
-      href="_css/styles.css"/>
+
       <!--bootstrap icons-->
       <link
       rel="stylesheet"
@@ -33,7 +31,7 @@
      <script src="_scripts/jquery-3.6.1.js"></script>
 </head>
 <body>
-    <div class="container " id="featured-container">
+    <div class="container" id="featured-container">
         <div class="col-12">
             <h2 class="title primary-color  my-3"><i class="bi bi-umbrella"></i>Inicie sua sessão</h2>
         </div>
@@ -43,20 +41,6 @@
                     <div class="banner-content text-center ">
                         <h3>Alanis</h3>
                         <a href="usuario.html" id="user1"><i class="bi bi-flower1"></i></a>
-                        <script>
-                            $(document).ready(function(){
-                                $("#user1").click(function(){
-                                    if(localStorage.length > 0){
-                                        localStorage.clear()
-                                    }
-                                    let keyUser = 'Usuário';
-                                    localStorage.setItem(keyUser, 'Alanis Helen');
-                                    
-                                })
-                                
-                            })
-                        </script>
-
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
@@ -83,5 +67,15 @@
             localStorage.clear()
         }
     })
+</script>
+<script>
+        $("#user1").click(function(){
+            let keyUser = 'Usuário';
+            localStorage.setItem(keyUser, 'Alanis Helen');
+        });
+        $("#user2").click(function(){
+            let keyUser = 'Usuário';
+            localStorage.setItem(keyUser, 'Fellipe Souza');
+        });
 </script>
 </html>

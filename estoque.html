@@ -23,9 +23,7 @@
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
      crossorigin="anonymous"></script>
     <!-- css do projeto -->
-    <link 
-    rel="stylesheet"
-     href="_css/styles.css"/>
+ 
      <!--bootstrap icons-->
      <link
      rel="stylesheet"
@@ -44,43 +42,38 @@
 
 </script>
 
-        <!--barra de navegação-->
 
-    <header class="navbar fixed-top bg-primary-color" id="navbar">
-        <div class="container justify-content-start mx-0" id="container-marca">
-            <i class="bi bi-shop"></i>
-            <h2 class="title mx-1 py-3 text-center">Conveniência Rei Do Coco</h2>
+     <!--barra de navegação-->
+
+     <header class="navbar fixed-top bg-primary-color" id="navbar">
+        <div class="container justify-content-center mx-0" id="container-marca">
+            <i class="bi bi-gear-wide-connected px-5"></i>
+            <h2 class="title px-3 py-3 text-center">Analisystem</h2>
         </div>
-        <div class="container" id="navbar-items">
-            <ul class="navbar-nav flex-row px-3 mb-3">
+        <div class="container justify-content-center" id="navbar-items">
+            <ul class="navbar-nav  flex-row px-3 mb-3">
                 <li class="nav-item px-3">
-                    <a href="principal.html" class="nav-link">Principal</a>
+                    <a href="principal.html" class="nav-link" >Home</a>
                 </li>
                 <li class="nav-item dropdown px-3">
-                    <a  class="nav-link dropdown-toggle"
+                    <a  class="nav-link active dropdown-toggle"
                         href="#"
                         id="navbarDropdown"
                         data-bs-toggle="dropdown" 
                         aria-haspopup="true" 
-                        aria-expanded="false">
-                        Estoque
+                        aria-expanded="false"
+                        aria-current="page">
+                      Stock
                     </a>
                     <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="estoque.html" aria-current="page">Novo cadastro</a>
-                        <a class="dropdown-item" href="#">Visualizar estoque</a>
+                      <a class="dropdown-item" href="estoque.html">New register</a>
                     </div>
-                    </li>
+                  </li>
                 <li class="nav-item px-3">
-                    <a href="#" class="nav-link ">Notas Fiscais</a>
+                    <a href="usuario.html" class="nav-link">User</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a href="#" class="nav-link ">Consultas</a>
-                </li>
-                <li class="nav-item px-3">
-                    <a href="usuario.html" class="nav-link ">Usuário</a>
-                </li>
-                <li class="nav-item px-3">
-                    <a href="#" class="nav-link ">Gerenciamento</a>
+                    <a href="#" class="nav-link ">Management</a>
                 </li>
             </ul>
         </div>
@@ -88,39 +81,40 @@
 
     <!-- Container das informações -->
     <section>
-        <div class="container py-4">
+        <div class="container bg-dark-color py-4" style="
+            border: 1px red solid; border-radius:10px">
                 <!--Cadastro de produtos-->
                 <div class="row">
-                    <h1 class="products text-center mb-4 pb-2">Cadastro de produtos</h1>
+                    <h1 class="products text-center mb-4 pb-2">Product Registration</h1>
                     <div class="col first-column">
-                        <form action="dadosProduto.php" method="POST" id="formulario">
+                        <form action="product_data_entry.php" method="POST" id="form">
                             <div class="row">
                                 <div class="col">
-                                    <h3 class="title text-center mt-2" id="produto">Nome do Lote</h3> 
-                                    <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do produto" required></p>
+                                    <h3 class="title text-center mt-2" id="produto">Name of Product</h3> 
+                                    <input type="text" class="form-control" name="nameOfProduct" id="nome" placeholder="Product Name" required></p>
                                 </div>
                                 <div class="col" id="Quantidade">
-                                    <h3 class="title text-center mt-2" id="hqtd">Quantidade do Lote</h3>
-                                    <input type="number" class="form-control" name="qtd" id="qtd" min="0" placeholder="1" required>
-                                    <select name="pacote" class="form-control" id="pacote">
-                                    <optgroup label="Unidade">
-                                        <option value="uni">Unid</option>
+                                    <h3 class="title text-center mt-2" id="hqtd">Quantity</h3>
+                                    <input type="number" class="form-control" name="quantity" id="qtd" min="0" placeholder="1" required>
+                                    <select name="packages" class="form-control" id="pacote">
+                                    <optgroup label="Unit">
+                                        <option value="uni">Unit</option>
                                         </optgroup>
-                                        <optgroup label="Pacotes">
-                                            <option value="pac(2 unid.)">2 unid.</option>
-                                            <option value="pac(3 unid.)">3 unid.</option>
-                                            <option value="pac(4 unid.)">4 unid.</option>
-                                            <option value="pac(5 unid.)">5 unid.</option>
-                                            <option value="pac(6 unid.)">6 unid.</option>
-                                            <option value="pac(7 unid.)">7 unid.</option>
-                                            <option value="pac(8 unid.)">8 unid.</option>
-                                            <option value="pac(9 unid.)">9 unid.</option>
-                                            <option value="pac(10 unid.)">10 unid.</option>
-                                            <option value="pac(11 unid.)">11 unid.</option>
-                                            <option value="pac(12 unid.)">12 unid.</option>
-                                            <option value="pac(13 unid.)">13 unid.</option>
-                                            <option value="pac(14 unid.)">14 unid.</option>
-                                            <option value="pac(15 unid.)">15 unid.</option>
+                                        <optgroup label="Package">
+                                            <option value="pac(2 units.)">2 units</option>
+                                            <option value="pac(3 units.)">3 units.</option>
+                                            <option value="pac(4 units.)">4 units.</option>
+                                            <option value="pac(5 units.)">5 units.</option>
+                                            <option value="pac(6 units.)">6 units.</option>
+                                            <option value="pac(7 units.)">7 units.</option>
+                                            <option value="pac(8 units.)">8 units.</option>
+                                            <option value="pac(9 units.)">9 units.</option>
+                                            <option value="pac(10 units.)">10 units.</option>
+                                            <option value="pac(11 units.)">11 units.</option>
+                                            <option value="pac(12 units.)">12 units.</option>
+                                            <option value="pac(13 units.)">13 units.</option>
+                                            <option value="pac(14 units.)">14 units.</option>
+                                            <option value="pac(15 units.)">15 units.</option>
                                         </optgroup>
                                     </select>
                                     
@@ -129,18 +123,18 @@
                                 
                                 <div class="row">
                                     <div class="col">
-                                        <h3 class="title text-center mt-2" id="validade">Código do Lote</h3>
-                                        <input type="number" class="form-control" name="cod" id="cod" placeholder="00000" required>
+                                        <h3 class="title text-center mt-2" >Barcode</h3>
+                                        <input type="number" class="form-control" name="productCode" id="cod" placeholder="00000" required>
                                     </div>
                                     <div class="col">
-                                        <h3 class="title text-center mt-2" id="validade">Validade</h3>
-                                        <input type="date" class="form-control" name="val" id="val" placeholder="01/01/2030"  required>
+                                        <h3 class="title text-center mt-2" id="validade">Validity</h3>
+                                        <input type="date" class="form-control" name="validity" id="val" placeholder="01/01/2030"  required>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <h3 class="title text-center mt-2" id="preco">Preço unitário</h3>
-                                        <input type="text" class="form-control" name="pre" 
+                                        <h3 class="title text-center mt-2" id="preco">Unit Price</h3>
+                                        <input type="text" class="form-control" name="unitPrice" 
                                         id="pre" 
                                         placeholder="R$0,00" 
                                         required>
@@ -157,15 +151,15 @@
                                 </div>
                     </div>
                     <div class="col distributor">
-                        <h2 class="title titulo-fornecedor">Fornecedor</h2>
+                        <h2 class="title titulo-fornecedor">Provider</h2>
                         <div class="row">
                             <div class="col">
-                                <h3 class="title  mt-2" id="preco">Nome do fornecedor</h3>
-                                <input type="text" class="form-control" name="fornecedor" id="fornecedor" placeholder="Nome do fornecedor" required>
-                                <h3 class="title mt-2" id="preco">Contato:</h3>
+                                <h3 class="title  mt-2" >Provider's Contact:</h3>
+                                <input type="text" class="form-control" name="providerContact" id="fornecedor" placeholder="Provider's name" required>
+                                <h3 class="title mt-2">Provider's Number:</h3>
                                 <input type="text" 
                                 class="form-control"
-                                 name="contato"
+                                 name="providerNumber"
                                  id="contact-number"
                                  placeholder="(00) 99999-9999 ou 9999-9999"
                                 required>
@@ -182,9 +176,9 @@
                         </div>
                         <div class="row">
                         <div class="col mt-2">
-                                    <input type="submit" class="btn btn-dark"
-                                    value="Adicionar" id="send">
-                                    <input type="reset" class="btn btn-dark" value="Limpar">
+                                    <input type="submit" class="btn btn-danger"
+                                    value="Add" id="send">
+                                    <input type="reset" class="btn btn-danger" value="Clear">
                                 </div>
                               
                             </div>

@@ -101,6 +101,13 @@ section{
 .user{
     font-weight: 800;
 }
+#username{
+    color: #ffffff;
+    background-color: #1a1a1a;
+    padding: 10px;
+    border: 1px #ff5353 solid;
+    border-radius: 10px;
+}
 #usuario{
     font-size: 1.2em;
     font-weight: 700;
