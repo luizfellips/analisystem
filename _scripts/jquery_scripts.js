@@ -10,3 +10,39 @@ function fadeEverythingIn(){
     $('#vendas-efetuadas').text(array['vendasEfetuadas']);
     $("#abertura").text(array['abertura']);
 }
+
+function loadPrices(array){
+    var id = array['id'];
+    var description = array['description'];
+    var price = array['price'];
+    var total = array['total'];
+    var quantity = array['quantity'];
+    $("tbody").append(`<tr>
+    <td>${id}</td>
+    <td>${description}</td>
+    <td>R$ ${price}</td>
+    <td>${quantity}</td>
+    <td>R$ ${total}</td>
+    </tr>`)
+    $("#unitPrice").text(`R$${price}`);
+    $("#unitSum").text(`R$${total}`)
+    var totalList = []
+    var totalPrice = 0;
+    $("#tabela-produtos tbody tr td:nth-child(5)").each(function(){
+      var item = $(this).text();
+      item = item.replace('R$ ','')
+      item = item.replace(',','.');
+      totalList.push( parseFloat(item) );
+    })
+    console.log(totalList);
+    for(item of totalList){
+      totalPrice += item;
+    }
+    totalPrice = totalPrice.toFixed(2);
+    totalPrice = totalPrice.toString();
+    console.log(typeof(totalPrice));
+    var newPrice = totalPrice.replace('.',',');
+    
+    $("#total").text(`R$ ${newPrice}`);
+    
+}

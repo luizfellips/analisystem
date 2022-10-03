@@ -96,49 +96,6 @@
                             </tr>
                         </thead>
                         <tbody >
-                            <tr>
-                                <th>-</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>-</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>-</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>-</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>-</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>-</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-
                         
                         </tbody>
                     </table>
@@ -156,25 +113,28 @@
                             <!--Codigo e quantia -->
                             <div class="row">
                                 <div class="col">
+                                    <form id="productRetrieving" method="POST" action="_phpscripts/retrieveInfo.php">
                                     <h3 class="title text-center" id="titulo-codigo">Code</h3>
-                                    <h2 class="subtitle p-1 bg-dark-color text-center" id="codigo">0000</h2>
+                                    <input type="number" class="form-control bg-dark-color text-center" id="codigo" placeholder="0000">
                                 </div>
                                 <div class="col">
                                     <h3 class="title text-center" id="titulo-quantidade">Quantity</h3>
-                                    <input type="number" class="form-control bg-dark-color text-center" name="qtd" id="qtd" min="0" value="1" required>
+                                    <input type="number" class="form-control bg-dark-color text-center" name="qtd" id="qtd" min="0" placeholder="0" required>
                                 </div>
                             </div>
                             <!--Preços dos produtos-->
                             <div class="row">
                                 <div class="col">
                                     <h3 class="title text-center my-3" >Unit Price</h3>
-                                    <h2 class="subtitle p-1 bg-dark-color text-center">R$0,00</h2>
+                                    <h2 class="subtitle p-1 bg-dark-color text-center" id="unitPrice">R$0,00</h2>
                                 </div>
                                 <div class="col">
                                     <h3 class="title text-center my-3" >Unit Sum</h3>
-                                    <h2 class="subtitle p-1 bg-dark-color text-center">R$0,00</h2>
+                                    <h2 class="subtitle p-1 bg-dark-color text-center" id="unitSum">R$0,00</h2>
                                 </div>
                             </div>
+                            <button class="btn btn-danger mt-1" id="addProduct" type="submit">Add product</button>
+                            </form>
                             <!--Resto das infos-->
                             <h3 class="title text-center" id="titulo-total">Total Price</h3>
                             <h2 class="subtitle p-1 bg-dark-color mx-auto text-center" id="total">R$0,00</h2>
@@ -190,6 +150,28 @@
                 var user = localStorage.getItem('Usuário');
                 $('#username').text(user);
             }
+    })
+</script>
+<script>
+    $(document).ready(function() {
+        $("#productRetrieving").submit(function(e){
+            e.preventDefault()
+
+            var formData = {
+                cod: $("#codigo").val(),
+                qtd: $("#qtd").val()
+            };
+            $.ajax({
+                type:"POST",
+                url:"_phpscripts/retrieveInfo.php",
+                data : formData,
+                success: function(data){
+                    console.log(data);
+                    var array = $.parseJSON(data);
+                    loadPrices(array);
+                }
+            })
+            })
     })
 </script>
 

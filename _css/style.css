@@ -128,14 +128,14 @@ section{
     border-radius: 10px;
 }
 /*config input*/
-#qtd{
+#qtd, #codigo{
     width: 70%;
     margin-left: 35px;
     border: 2px rgb(255, 255, 255) solid;
     font-size: 1.3em;
     transition: 0.2s;
 }
-#qtd:hover{
+#qtd:hover,#codigo:hover{
     background-color: white;
     color: black;
 }
@@ -143,6 +143,10 @@ section{
 #titulo-total,#total{
     margin-top: 0.5em;
     font-size: 3em;
+}
+#addProduct{
+    margin-left: 6em;
+    width: 20em;
 }
 #total{
     margin-left: 2em;
@@ -157,8 +161,4 @@ section{
     width: 80%;
     border: 1px rgb(255, 255, 255) solid;
     font-size: 1.1em;
-}
-
-.btn{
-    margin: auto;
 }

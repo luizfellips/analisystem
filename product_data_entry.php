@@ -30,7 +30,7 @@
     <?php
         $nameOfProduct = isset($_POST["nameOfProduct"])?$_POST["nameOfProduct"]: "[No Entry]";
         $productCode = isset($_POST["productCode"])?$_POST["productCode"]: "0";
-        $quantity = isset($_POST["Quantity"])?$_POST["Quantity"]: "0";
+        $quantity = isset($_POST["quantity"])?$_POST["quantity"]: "0";
         $unformattedPrice = isset($_POST["unitPrice"])?str_replace('R$','',$_POST["unitPrice"]): "0";
         $price= (float)str_replace(',','.',$unformattedPrice);
         $providerContact = isset($_POST["providerContact"])?$_POST["providerContact"]:"[No Entry]";
