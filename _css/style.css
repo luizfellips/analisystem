@@ -145,8 +145,14 @@ section{
     font-size: 3em;
 }
 #addProduct{
-    margin-left: 7em;
+    margin-left: 3.5em;
     width: 20em;
+}
+@media(min-width:720px){
+    #addProduct{
+        margin-left: 10em;
+    }
+
 }
 #total{
     margin-left: 2em;

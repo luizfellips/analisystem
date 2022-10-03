@@ -65,7 +65,7 @@
                         </a>
                         <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item" href="stock.html">New register</a>
-                          <a class="dropdown-item" href="viewStock.html">View stock</a>
+                          <a class="dropdown-item" href="viewStock.php">View stock</a>
                         </div>
                       </li>
                     <li class="nav-item px-3">
@@ -86,19 +86,22 @@
                     <!--Table-->
                     <div class="col justify-content-center">
                         <h1 class="products text-center">Products</h1>
-                    <table class="table table-dark table-striped text-center" id="tabela-produtos">
+                    <table class="table table-dark table-striped text-center table-hover align-self-md-center" id="tabela-produtos">
                         <thead id="header-fixed">
                             <tr>
-                                <th class="col">ID</th>
-                                <th class="col">Description</th>
-                                <th class="col">Price</th>
-                                <th class="col">Quantity</th>
-                                <th class="col">Provider</th>
-                                <th class="col">Provider Contact</th>
-
+                                <th>ID</th>
+                                <th>Description</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Provider</th>
+                                <th>Contact</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                            include ('_phpscripts/sql_functions.php');
+                            retrieveAll();
+                            ?>
                         </tbody>
                     </table>
                 </div>
