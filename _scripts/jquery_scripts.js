@@ -34,15 +34,22 @@ function loadPrices(array){
       item = item.replace(',','.');
       totalList.push( parseFloat(item) );
     })
-    console.log(totalList);
     for(item of totalList){
       totalPrice += item;
     }
     totalPrice = totalPrice.toFixed(2);
     totalPrice = totalPrice.toString();
-    console.log(typeof(totalPrice));
     var newPrice = totalPrice.replace('.',',');
     
     $("#total").text(`R$ ${newPrice}`);
     
+}
+
+function clearAll(){
+  $("#tabela-produtos > tbody").empty();
+  $("#total").text("R$0,00");
+  $("#codigo").val(0);
+  $("#qtd").val(0);
+  $("#unitPrice").text("R$0,00");
+  $("#unitSum").text("R$0,00");
 }

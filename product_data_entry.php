@@ -44,38 +44,38 @@
     <!--barra de navegação-->
 
     <header class="navbar fixed-top bg-primary-color" id="navbar">
-            <div class="container justify-content-center mx-0" id="container-marca">
-                <i class="bi bi-gear-wide-connected px-5"></i>
-                <h2 class="title px-3 py-3 text-center">Analisystem</h2>
-            </div>
-            <div class="container justify-content-center" id="navbar-items">
-                <ul class="navbar-nav  flex-row px-3 mb-3">
-                    <li class="nav-item px-3">
-                        <a href="home.html" class="nav-link " >Home</a>
-                    </li>
-                    <li class="nav-item dropdown px-3">
-                        <a  class="nav-link active dropdown-toggle"
-                            href="#"
-                            id="navbarDropdown"
-                            data-bs-toggle="dropdown" 
-                            aria-haspopup="true" 
-                            aria-expanded="false"
-                            aria-current="page">
-                          Stock
-                        </a>
-                        <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="stock.html">New register</a>
-                        </div>
-                      </li>
-                    <li class="nav-item px-3">
-                        <a href="user.html" class="nav-link">User</a>
-                    </li>
-                    <li class="nav-item px-3">
-                        <a href="#" class="nav-link ">Management</a>
-                    </li>
-                </ul>
-            </div>
-        </header>
+        <div class="container justify-content-center " id="container-marca">
+        <a href="home.html" class="link link-danger"><i class="bi bi-gear-wide-connected px-2"></i></a>
+            <h2 class="title  py-3 text-center">Analisystem</h2>
+        </div>
+        <div class="container justify-content-center" id="navbar-items">
+            <ul class="navbar-nav  flex-row px-3 mb-3">
+                <li class="nav-item px-3">
+                    <a href="home.html" class="nav-link active" aria-current="page">Home</a>
+                </li>
+                <li class="nav-item dropdown px-3">
+                    <a  class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdown"
+                        data-bs-toggle="dropdown" 
+                        aria-haspopup="true" 
+                        aria-expanded="false">
+                      Stock
+                    </a>
+                    <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="stock.html">New register</a>
+                      <a class="dropdown-item" href="viewStock.html">View stock</a>
+                    </div>
+                  </li>
+                <li class="nav-item px-3">
+                    <a href="user.html" class="nav-link">User</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a href="#" class="nav-link ">Management</a>
+                </li>
+            </ul>
+        </div>
+    </header>
 
     <!-- Container das informações -->
     <section>

@@ -45,7 +45,7 @@
 
         <header class="navbar fixed-top bg-primary-color" id="navbar">
             <div class="container justify-content-center " id="container-marca">
-                <i class="bi bi-gear-wide-connected px-2"></i>
+                <a href="home.html" class="link link-danger"><i class="bi bi-gear-wide-connected px-2"></i></a>
                 <h2 class="title  py-3 text-center">Analisystem</h2>
             </div>
             <div class="container justify-content-center" id="navbar-items">
@@ -104,7 +104,8 @@
                     </select>
                     <!--area de botões-->
                     <div class="btn-toolbar py-2 justify-content-center" role="toolbar">
-                        <button class="btn btn-danger mb-2 mx-2" type="button" id="startConsultation">Start Consultation</button>
+                        <button class="btn btn-danger mb-2 mx-2" type="button" id="closeConsultation">Close Consultation</button>
+                        <button class="btn btn-danger mb-2 mx-2" type="button" id="clearAll">Clear</button>
                     </div>
                 </div>
                     <!--Informações gerais-->
@@ -145,6 +146,24 @@
         </section>
 </body>
 <script>
+    $(document).ready(function(){
+        $("#closeConsultation").click(function(){
+                var valorVendido = $("#total").text();
+                $.ajax({
+                    type: 'GET',
+                    url: '_phpscripts/dataProcess.php',
+                    data: {Valor: valorVendido, KeyUser: localStorage.getItem('Usuário')},
+                    success: clearAll()
+                })
+        })
+    })
+    $(document).ready(function(){
+        $("#clearAll").click(function(){
+            clearAll();
+        });
+    })
+</script>
+<script>
     $(document).ready(function() {
             if(localStorage.length > 0){
                 var user = localStorage.getItem('Usuário');
@@ -156,7 +175,6 @@
     $(document).ready(function() {
         $("#productRetrieving").submit(function(e){
             e.preventDefault()
-
             var formData = {
                 cod: $("#codigo").val(),
                 qtd: $("#qtd").val()
@@ -166,7 +184,6 @@
                 url:"_phpscripts/retrieveInfo.php",
                 data : formData,
                 success: function(data){
-                    console.log(data);
                     var array = $.parseJSON(data);
                     loadPrices(array);
                 }
