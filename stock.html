@@ -53,7 +53,7 @@
         <div class="container justify-content-center" id="navbar-items">
             <ul class="navbar-nav  flex-row px-3 mb-3">
                 <li class="nav-item px-3">
-                    <a href="principal.html" class="nav-link" >Home</a>
+                    <a href="home.html" class="nav-link" >Home</a>
                 </li>
                 <li class="nav-item dropdown px-3">
                     <a  class="nav-link active dropdown-toggle"
@@ -66,11 +66,11 @@
                       Stock
                     </a>
                     <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="estoque.html">New register</a>
+                      <a class="dropdown-item" href="stock.html">New register</a>
                     </div>
                   </li>
                 <li class="nav-item px-3">
-                    <a href="usuario.html" class="nav-link">User</a>
+                    <a href="user.html" class="nav-link">User</a>
                 </li>
                 <li class="nav-item px-3">
                     <a href="#" class="nav-link ">Management</a>
@@ -87,53 +87,21 @@
                 <div class="row">
                     <h1 class="products text-center mb-4 pb-2">Product Registration</h1>
                     <div class="col first-column">
+                        <h2 class="title titulo-fornecedor">Product</h2>
                         <form action="product_data_entry.php" method="POST" id="form">
                             <div class="row">
                                 <div class="col">
                                     <h3 class="title text-center mt-2" id="produto">Name of Product</h3> 
                                     <input type="text" class="form-control" name="nameOfProduct" id="nome" placeholder="Product Name" required></p>
-                                </div>
-                                <div class="col" id="Quantidade">
-                                    <h3 class="title text-center mt-2" id="hqtd">Quantity</h3>
-                                    <input type="number" class="form-control" name="quantity" id="qtd" min="0" placeholder="1" required>
-                                    <select name="packages" class="form-control" id="pacote">
-                                    <optgroup label="Unit">
-                                        <option value="uni">Unit</option>
-                                        </optgroup>
-                                        <optgroup label="Package">
-                                            <option value="pac(2 units.)">2 units</option>
-                                            <option value="pac(3 units.)">3 units.</option>
-                                            <option value="pac(4 units.)">4 units.</option>
-                                            <option value="pac(5 units.)">5 units.</option>
-                                            <option value="pac(6 units.)">6 units.</option>
-                                            <option value="pac(7 units.)">7 units.</option>
-                                            <option value="pac(8 units.)">8 units.</option>
-                                            <option value="pac(9 units.)">9 units.</option>
-                                            <option value="pac(10 units.)">10 units.</option>
-                                            <option value="pac(11 units.)">11 units.</option>
-                                            <option value="pac(12 units.)">12 units.</option>
-                                            <option value="pac(13 units.)">13 units.</option>
-                                            <option value="pac(14 units.)">14 units.</option>
-                                            <option value="pac(15 units.)">15 units.</option>
-                                        </optgroup>
-                                    </select>
-                                    
-                                </div>
-                            </div>
-                                
-                                <div class="row">
                                     <div class="col">
-                                        <h3 class="title text-center mt-2" >Barcode</h3>
+                                        <h3 class="title text-center mt-2" >Code</h3>
                                         <input type="number" class="form-control" name="productCode" id="cod" placeholder="00000" required>
                                     </div>
-                                    <div class="col">
-                                        <h3 class="title text-center mt-2" id="validade">Validity</h3>
-                                        <input type="date" class="form-control" name="validity" id="val" placeholder="01/01/2030"  required>
-                                    </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <h3 class="title text-center mt-2" id="preco">Unit Price</h3>
+                                <div class="col">
+                                    <h3 class="title text-center mt-2">Quantity</h3>
+                                    <input type="number" class="form-control" name="quantity" id="quantity" min="0" placeholder="1" required>
+                                    <h3 class="title text-center mt-3" id="preco">Unit Price</h3>
                                         <input type="text" class="form-control" name="unitPrice" 
                                         id="pre" 
                                         placeholder="R$0,00" 
@@ -147,8 +115,11 @@
                                                  affixesStay: true})
                                             }))
                                         </script>
-                                    </div>
                                 </div>
+                            </div>
+                                
+                              
+                               
                     </div>
                     <div class="col distributor">
                         <h2 class="title titulo-fornecedor">Provider</h2>

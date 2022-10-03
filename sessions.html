@@ -33,29 +33,24 @@
 <body>
     <div class="container" id="featured-container">
         <div class="col-12">
-            <h2 class="title primary-color  my-3"><i class="bi bi-umbrella"></i>Inicie sua sessão</h2>
+            <h2 class="title primary-color my-3"><i class="bi bi-umbrella"></i>Inicie sua sessão</h2>
         </div>
-        <div class="col-12" id="featured-images">
-            <div class="row g-4">
-                <div class="col-12 col-md-4 ">
+        <div class="col-6 col-md-12" id="featured-images">
+            <div class="row">
+                <div class="col-6 col-md-6">
                     <div class="banner-content text-center ">
                         <h3>Alanis</h3>
-                        <a href="usuario.html" id="user1"><i class="bi bi-flower1"></i></a>
+                        <a href="user.html" id="user1"><i class="bi bi-flower1"></i></a>
                     </div>
                 </div>
-                <div class="col-12 col-md-4">
+                <div class="col-6 col-md-6">
                     <div class="banner-content text-center ">
                         <h3>Fellips</h3>
-                        <a href="usuario.html"><i class="bi bi-award"></i></a>
+                        <a href="user.html" id="user2"><i class="bi bi-award"></i></a>
 
                     </div>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="banner-content text-center">
-                        <h3>Michael Jackson</h3>
-                        <a href="usuario.html"><i class="bi bi-bug"></i></a>
-                    </div>
-                </div>
+                
              
             </div>
         </div>
@@ -71,11 +66,19 @@
 <script>
         $("#user1").click(function(){
             let keyUser = 'Usuário';
+            let keyTime = 'Horário de Abertura';
+            const date = new Date();
+            var current_time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
             localStorage.setItem(keyUser, 'Alanis Helen');
+            localStorage.setItem(keyTime, current_time);
         });
         $("#user2").click(function(){
             let keyUser = 'Usuário';
+            let keyTime = 'Horário de Abertura';
+            const date = new Date();
+            var current_time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
             localStorage.setItem(keyUser, 'Fellipe Souza');
+            localStorage.setItem(keyTime, current_time);
         });
 </script>
 </html>

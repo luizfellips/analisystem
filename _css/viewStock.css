@@ -30,7 +30,7 @@ body{
     color: #444444;
 }
 
-
+/*navbar*/
 
 
 .navbar .bi{
@@ -49,7 +49,7 @@ body{
     padding: 0;
     border-bottom: 1px solid rgb(255, 72, 72);
     background-color: #444444;
-    color: #ff4545;
+    color: rgb(255, 72, 72);
 }
 #navbar a.active{
     color: white;
@@ -76,93 +76,25 @@ section{
     margin-top: 13.8em;
 }
 
+.containermain{
+    border: 1px red solid;
+}
+
 #tabela-produtos {
     position: relative;
     border-collapse: collapse;
-    border: 1px rgb(255, 95, 95) solid;
-    width: 80%;
-    margin: 15px auto;
+    border: 1px rgb(0, 0, 0) solid;
+    margin-top: 1.875em;
 }
 
 #header-fixed{
     position: sticky;
     top: 190px;
-
 }
 
 /*Informações*/
-.products, .informations{
+.products{
     width: 80%;
     margin: auto;
-    border-bottom: 1px rgb(255, 94, 94) solid;
-}
-
-#titulo-quantidade, #titulo-codigo{
-    margin-top: 21.7px;
-}
-
-.subtitle{
-    border: 1px black solid;
-}
-/*config inputs*/
-#cadastro-de-produtos{
-    border-bottom: 1px rgb(250, 105, 105) #7a7a7a;
-}
-.caixa {
-    display: block;
-    margin: auto;
-    width: 16em;
-}
-.botao {
-    display: block;
-    margin: auto;
-}
-/*formulario*/
-
-
-.form-control{
-    width: 250px;
-    margin: auto;
-}
-#quantity{
-    margin-left: 80px;
-}
-@media(min-width:768px){
-    #quantity{
-        margin:auto;
-    }
-}
-.titulo-fornecedor{
-border-bottom: 1px rgb(253, 92, 92) solid;
-}
-
-#fornecedor, #contact-number{
-    margin-left: 0px;
-}
-.btn{
-    margin: auto;
-    width: 20%;
-}
-.first-column{
-    border-right: 1px rgb(253, 65, 65) solid;
-    margin-top: 10px;
-}
-
-.distributor{
-    margin-top: 10px;
-}
-
-/**/
-
-#titulo-total,#total{
-    margin-top: 0.5em;
-    font-size: 3em;
-}
-#total{
-    margin-left: 2em;
-    width: 7.7em;
-    color: rgb(0, 0, 0);
-}
-.separator{
-    border-bottom: 1px black solid;
+    border-bottom: 1px rgb(255, 0, 0) solid;
 }

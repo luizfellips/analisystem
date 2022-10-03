@@ -50,7 +50,7 @@
         <div class="container justify-content-center" id="navbar-items">
             <ul class="navbar-nav  flex-row px-3 mb-3">
                 <li class="nav-item px-3">
-                    <a href="principal.html" class="nav-link">Home</a>
+                    <a href="home.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item dropdown px-3">
                     <a  class="nav-link dropdown-toggle"
@@ -62,11 +62,11 @@
                       Stock
                     </a>
                     <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="estoque.html">New register</a>
+                      <a class="dropdown-item" href="stock.html">New register</a>
                     </div>
                   </li>
                 <li class="nav-item px-3">
-                    <a href="usuario.html" class="nav-link active" aria-current="page">User</a>
+                    <a href="user.html" class="nav-link active" aria-current="page">User</a>
                 </li>
                 <li class="nav-item px-3">
                     <a href="#" class="nav-link">Management</a>
@@ -79,69 +79,54 @@
         <div class="container py-4">
             <div class="row">
                 <div class="col">
-                    <h1 class="title-user mb-3">Usuário Atual</h1>
+                    <h1 class="title-user mb-3">Current User</h1>
                     <select class="form-select bg-dark-color" name="usuario" id="usuario">
-                        <option selected value="none">Não Informado</option>
+                        <option selected value="none">No Entry</option>
                                 <option value="Alanis Helen">Alanis Helen</option>
                                 <option value="Fellipe Souza">Fellipe Souza</option>
                                 <option value="Michael Jackson">Michael Jackson</option>
                     </select>
-                    <button class="btn btn-danger px-3 mt-1">Fechar Jornada</button>
-                    <button class="btn btn-danger px-3 mt-1">Info Diária</button>
-                    <button class="btn btn-danger px-3 mt-1">Info Semanal</button>
-                    <a href="sessoes.html"><button class="btn btn-danger px-3 mt-1">Trocar Sessão</button></a>
+                    <button class="btn btn-danger px-3 mt-1" id="closeJourney">Close Journey</button>
+                    <a href="sessions.html"><button class="btn btn-danger px-3 mx-2 mt-1">Switch Sessions</button></a>
                 </div>
                     <div class="col infos">
-                        <h1 class="title my-4 text-center">Vendas Efetuadas</h1>
+                        <h1 class="title my-4 text-center">Completed sales</h1>
                         <h2 class="sellings my-3 text-center " id="vendas-efetuadas">0</h2>
                     </div>
 
                     <div class="col infos">
-                        <h1 class="title my-4  text-center">Valor Vendido</h1>
+                        <h1 class="title my-4  text-center">Sold Value</h1>
                         <h2 class="sellings my-3 text-center " id="valor-vendido">R$0,00</h2>
                     </div>
             </div>
             <div class="row my-5">
                 <div class="col infos">
                     <!--expediente-->
-                    <h1 class="title my-4 text-center">Horário do Expediente</h1>
+                    <h1 class="title my-4 text-center">Office Hour</h1>
                     <div class="row">
                         <div class="col ">
-                            <h3 class="sellings my-2 text-center " id="vendas-efetuadas">Abertura</h3>
-                            <h4 class="time my-2 text-center fs-3 fw-5" id="abertura">07:00</h4>
+                            <h3 class="sellings my-2 text-center " >Opening</h3>
+                            <h4 class="time my-2 text-center fs-3 fw-5" id="abertura">00:00:00</h4>
                         </div>
                         <div class="col ">      
-                            <h3 class="sellings my-2 text-center " id="vendas-efetuadas">Fechamento</h3>
-                            <h4 class="time my-2 text-center fs-3 fw-5" id="fechamento">19:00</h4>
+                            <h3 class="sellings my-2 text-center " >Closing</h3>
+                            <h4 class="time my-2 text-center fs-3 fw-5" id="fechamento">00:00:00</h4>
                         </div>
                     </div>
-                    <!--faturamento-->
-                    <h1 class="billing-title bg-secondary-color">Faturamentos</h1>
-                    <div class="row">
-                        <div class="col">
-                            <h4 class="billings mb-3">Dinheiro Espécie</h4>
-                            <h4 class="billings mb-3">Cartão</h4>
-                            <h4 class="billings mb-3">Pix</h4>
-                        </div>
-                        <div class="col">
-                            <h4 class="billings mb-3" id="dinheiro-especie">R$0,00</h4>
-                            <h4 class="billings mb-3" id="cartao">R$0,00</h4>
-                            <h4 class="billings mb-3" id="pix">R$0,00</h4>
-                        </div>
-                    </div>
+                    
                     
                 </div>
 
                 <div class="col infos">
-                    <h1 class="title my-4  text-center">Mudança de Estoque</h1>
+                    <h1 class="title my-4  text-center">Stock Control</h1>
                     <table class="table table-light table-striped text-center" id="tabela-produtos">
                         <thead class="table-dark" id="header-fixed">
                             <tr>
                                 <th class="col">ID</th>
-                                <th class="col">Nome do Produto</th>
-                                <th class="col">Preço Uni.</th>
-                                <th class="col">Início</th>
-                                <th class="col">Fim</th>
+                                <th class="col">Description</th>
+                                <th class="col">Unit Price</th>
+                                <th class="col">Start</th>
+                                <th class="col">End</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -154,10 +139,12 @@
 </body>
 <script>
     let item = localStorage.getItem('Usuário');
+    let current_time = localStorage.getItem('Horário de Abertura');
+    console.log(current_time)
     $.ajax({
         type: "GET",
         url: "_phpscripts/localStorageLoad.php",
-        data: {MyKey: item},
+        data: {KeyUser: item, CurrentTime: current_time},
         success: function(data){
             var array = $.parseJSON(data);
             loadData(array);
@@ -167,10 +154,16 @@
 <script>
     $('#usuario').change(function(){
         var selected_option_value = $(this).find(":selected").val();
+        if (selected_option_value ==  localStorage.getItem('Usuário')){
+            var current_time_second = localStorage.getItem('Horário de Abertura');
+        }
+        else{
+            current_time_second = '00:00:00';
+        }
         $.ajax({
             type: "GET",
             url: "_phpscripts/localStorageLoad.php",
-            data: {MyKey: selected_option_value},
+            data: {KeyUser: selected_option_value, CurrentTime: current_time_second},
             success: function(data){
                 var array = $.parseJSON(data);
                 loadData(array);
@@ -178,4 +171,5 @@
         });
     })
 </script>
+
 </html>

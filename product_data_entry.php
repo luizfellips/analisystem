@@ -29,21 +29,12 @@
         />
     <?php
         $nameOfProduct = isset($_POST["nameOfProduct"])?$_POST["nameOfProduct"]: "[No Entry]";
-        $barcode = isset($_POST["Barcode"])?$_POST["Barcode"]: "0";
+        $productCode = isset($_POST["productCode"])?$_POST["productCode"]: "0";
         $quantity = isset($_POST["Quantity"])?$_POST["Quantity"]: "0";
-        $package = $_POST["Packages"];
-        $preValidity = isset($_POST["Validity"])?date_create($_POST["Validity"]): "00/00/0000";
-        if($preValidity == '00/00/0000'){
-            $validity = $preValidity;
-        }else{
-            $validity = date_format($preValidity,'d/m/Y');
-            $validity_sql = date_format($preValidity,'Y-m-d');
-        }
         $unformattedPrice = isset($_POST["unitPrice"])?str_replace('R$','',$_POST["unitPrice"]): "0";
         $price= (float)str_replace(',','.',$unformattedPrice);
         $providerContact = isset($_POST["providerContact"])?$_POST["providerContact"]:"[No Entry]";
         $providerNumber = isset($_POST["providerNumber"])?$_POST["providerNumber"]:"(00) 00000-0000";
-    
     ?>    
    <!--Seu css-->
    <style><?php include "_css/estoque.css" ?></style>
@@ -53,45 +44,38 @@
     <!--barra de navegação-->
 
     <header class="navbar fixed-top bg-primary-color" id="navbar">
-        <div class="container justify-content-start mx-0" id="container-marca">
-            <i class="bi bi-shop"></i>
-            <h2 class="title mx-1 py-3 text-center">Conveniência Rei Do Coco</h2>
-        </div>
-        <div class="container" id="navbar-items">
-            <ul class="navbar-nav flex-row px-3 mb-3">
-                <li class="nav-item px-3">
-                    <a href="principal.html" class="nav-link">Principal</a>
-                </li>
-                <li class="nav-item dropdown px-3">
-                    <a  class="nav-link dropdown-toggle"
-                        href="#"
-                        id="navbarDropdown"
-                        data-bs-toggle="dropdown" 
-                        aria-haspopup="true" 
-                        aria-expanded="false">
-                        Estoque
-                    </a>
-                    <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="estoque.html" aria-current="page">Novo cadastro</a>
-                        <a class="dropdown-item" href="visualizar_estoque.php">Visualizar estoque</a>
-                        <a class="dropdown-item" href="abastecer_estoque.html">Abastecer estoque</a>
-                    </div>
+            <div class="container justify-content-center mx-0" id="container-marca">
+                <i class="bi bi-gear-wide-connected px-5"></i>
+                <h2 class="title px-3 py-3 text-center">Analisystem</h2>
+            </div>
+            <div class="container justify-content-center" id="navbar-items">
+                <ul class="navbar-nav  flex-row px-3 mb-3">
+                    <li class="nav-item px-3">
+                        <a href="home.html" class="nav-link " >Home</a>
                     </li>
-                <li class="nav-item px-3">
-                    <a href="#" class="nav-link ">Notas Fiscais</a>
-                </li>
-                <li class="nav-item px-3">
-                    <a href="#" class="nav-link ">Consultas</a>
-                </li>
-                <li class="nav-item px-3">
-                    <a href="usuario.html" class="nav-link ">Usuário</a>
-                </li>
-                <li class="nav-item px-3">
-                    <a href="#" class="nav-link ">Gerenciamento</a>
-                </li>
-            </ul>
-        </div>
-    </header>
+                    <li class="nav-item dropdown px-3">
+                        <a  class="nav-link active dropdown-toggle"
+                            href="#"
+                            id="navbarDropdown"
+                            data-bs-toggle="dropdown" 
+                            aria-haspopup="true" 
+                            aria-expanded="false"
+                            aria-current="page">
+                          Stock
+                        </a>
+                        <div class="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="stock.html">New register</a>
+                        </div>
+                      </li>
+                    <li class="nav-item px-3">
+                        <a href="user.html" class="nav-link">User</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a href="#" class="nav-link ">Management</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
 
     <!-- Container das informações -->
     <section>
@@ -100,38 +84,34 @@
                 
                 <!--Table de produtos-->
                 <div class="col">
-                    <h1 class="informations text-center">Dados inseridos</h1>
-                    <table class="table table-light table-striped table-hover text-center" id="tabela-produtos">
+                    <h1 class="informations text-center" style="color: #ff4545">Inserted Data</h1>
+                    <table class="table table-dark table-striped table-hover text-center" id="tabela-produtos">
                         <thead class="table-dark" id="header-fixed">
                             <tr>
-                                <th class="col">ID</th>
-                                <th class="col">Nome do Produto</th>
-                                <th class="col">Quantidade</th>
-                                <th class="col">Pac/uni</th>
-                                <th class="col">Validade</th>
-                                <th class="col">Preço</th>
-                                <th class="col">Fornecedor</th>
-                                <th class="col">Contato</th>
+                                <th class="col">Code</th>
+                                <th class="col">Product name</th>
+                                <th class="col">Quantity</th>
+                                <th class="col">Price</th>
+                                <th class="col">Provider</th>
+                                <th class="col">Contact</th>
                             </tr>
                         </thead>
                         <tbody >
                             <tr>
-                                <th><?php echo $barcode;?></th>
+                                <th><?php echo $productCode;?></th>
                                 <td><?php echo $nameOfProduct;?></td>
                                 <td><?php echo $quantity;?></td>
-                                <td><?php echo $package;?></td>
-                                <td><?php echo $validity;?></td>
                                 <td>R$ <?php echo $price;?></td>
                                 <td><?php echo $providerContact;?></td>
                                 <td><?php echo $providerNumber;?></td>
                             </tr>
                             <?php
-                                include "php/sql.php";
-                                adicionar($codigo,$nome,$qtd,$pacote,$validade_sql,$preco,$fornecedor,$contato);
+                                include "_phpscripts/sql_functions.php";
+                                insertIntoDatabase($productCode,$nameOfProduct,$quantity,$price,$providerContact,$providerNumber);
                             ?>
                         </tbody>
                     </table>
-                    <div class="flip-2-hor-bottom-1"><a href="estoque.html">Novo cadastro</a></div>
+                    <div class="title text-center" ><a class="text-decoration-none" href="stock.html" style="color: #ff4545">New Register</a></div>
                 </div>
             </div>
         </div>   
