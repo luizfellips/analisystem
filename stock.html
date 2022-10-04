@@ -96,7 +96,7 @@
                                     <input type="text" class="form-control" name="nameOfProduct" id="nome" placeholder="Product Name" required></p>
                                     <div class="col">
                                         <h3 class="title text-center mt-2" >Code</h3>
-                                        <input type="number" class="form-control" name="productCode" id="cod" placeholder="00000" required>
+                                        <input type="text" class="form-control" name="productCode" id="cod" placeholder="00000" oninput="javascript: this.value = this.value.replace(/\D/g,'')" maxlength ="3" required>
                                     </div>
                                 </div>
                                 <div class="col">

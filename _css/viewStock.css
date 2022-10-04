@@ -98,3 +98,12 @@ section{
     margin: auto;
     border-bottom: 1px rgb(255, 0, 0) solid;
 }
+
+.btn{
+width: 500px;
+}
+
+table tbody tr:hover {
+    --bs-table-hover-bg: #b18585;
+    cursor: pointer;
+}

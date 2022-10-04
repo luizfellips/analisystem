@@ -79,12 +79,12 @@
         </header>
 
         <!-- Container das informações -->
-        <section>
-            <div class="container bg-dark-color py-3" style="
+    <section>
+        <div class="container bg-dark-color py-3" style="
             border: 1px red solid; border-radius:10px">
                 <div class="row">
                     <!--Table-->
-                    <div class="col justify-content-center">
+                    <div class="col text-center">
                         <h1 class="products text-center">Products</h1>
                     <table class="table table-dark table-striped text-center table-hover align-self-md-center" id="tabela-produtos">
                         <thead id="header-fixed">
@@ -104,7 +104,28 @@
                             ?>
                         </tbody>
                     </table>
+                    <button class="btn btn-danger" id="deletebutton">Delete</button>
                 </div>
-            </section>
-        </body>
-    </html>
+        </section>
+    </body>
+    <script>
+        $(document).ready(function(){
+            $('table tbody tr').click(function(){
+                $(this).css('--bs-table-bg', '#a03838');
+                $(this).css('--bs-table-striped-bg', '#eb6c6c');
+                var code = $(this).text().substring(0,3);
+                $("#deletebutton").click(function(){
+                    $.ajax({
+                        type:'GET',
+                        url: "_phpscripts/dataDelete.php",
+                        data: {Key: code},
+                        success: function(data){
+                            location.reload();
+                        }
+
+                    })
+                })
+            });
+        });
+    </script>
+</html>
