@@ -100,10 +100,41 @@ section{
 }
 
 .btn{
-width: 500px;
+width: 200px;
 }
 
 table tbody tr:hover {
     --bs-table-hover-bg: #b18585;
     cursor: pointer;
+}
+
+.popup-overlay{
+    visibility: hidden;
+    margin: 0 32em;
+    position: absolute;
+    top: 12em;
+    background-color: #544848;
+}
+.popup-content {
+    visibility:hidden;
+    background-color: #312d2d;
+    color: #ff5353;
+    padding: 10px;
+    border: 1px red solid;
+    height: 30em;
+    width: 30em;
+    }
+
+.popup-overlay.active{
+    visibility:visible;
+}
+        
+.popup-content.active {
+    visibility:visible;
+    opacity: 1;
+}  
+
+.popup-content.active body{
+    background-color: #353535ad;
+
 }

@@ -35,6 +35,10 @@
    <script src="_scripts/personal_scripts.js" type="text/javascript"></script>
    <script src="_scripts/jquery-3.6.1.js"></script>
    <script src="_scripts/jquery_scripts.js"></script>
+   <script src="_scripts/jquery.maskMoney.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
 
 </head>
 <body>
@@ -71,9 +75,6 @@
                     <li class="nav-item px-3">
                         <a href="user.html" class="nav-link">User</a>
                     </li>
-                    <li class="nav-item px-3">
-                        <a href="#" class="nav-link ">Management</a>
-                    </li>
                 </ul>
             </div>
         </header>
@@ -104,16 +105,79 @@
                             ?>
                         </tbody>
                     </table>
-                    <button class="btn btn-danger" id="deletebutton">Delete</button>
+                    <button class="btn btn-danger mx-1" id="deletebutton">Delete</button>
+                    <button class="btn btn-danger mx-1 open" id="editbutton">Edit</button>
                 </div>
         </section>
-    </body>
-    <script>
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <h2>Edit Item</h2>
+            <form id='editForm' method="POST">
+            <div class="col">
+                 <h3 class="title text-center mt-2" id="produto">Code</h3> 
+                <input type="text" class="form-control" name="CodeKey" id="code" placeholder="Actual Code" value=000 required/>
+                <h3 class="title text-center mt-2" id="produto">Name of Product</h3> 
+                <input type="text" class="form-control" name="NameKey" id="nome" placeholder="Product Name" required>
+            </div>
+            <div class="col">
+                <h3 class="title text-center mt-2">Quantity</h3>
+                <input type="number" class="form-control" name="QuantityKey" id="quantity" min="0" placeholder="1" required>
+                <h3 class="title text-center mt-3" id="preco">Unit Price</h3>
+                    <input type="text" class="form-control" name="PriceKey" 
+                    id="price" 
+                    placeholder="R$0,00" 
+                    required>
+                    <script>
+                        $(document).ready($(function(){
+                            $("#price").maskMoney({prefix:'R$ ',
+                                allowNegative: false, 
+                                thousands:'.',
+                                decimal:',', 
+                                affixesStay: true})
+                        }))
+                    </script>
+                    <button class="btn btn-danger close mt-2" name="submit" type="button" id="submit">Close</button>
+            </div>
+        </div>
+       
+            </form>
+              
+        </div>
+    </div>      
+</body>
+<script>
         $(document).ready(function(){
             $('table tbody tr').click(function(){
                 $(this).css('--bs-table-bg', '#a03838');
                 $(this).css('--bs-table-striped-bg', '#eb6c6c');
                 var code = $(this).text().substring(0,3);
+
+                $("#editbutton").click(function(){
+                    $("#code").val(code);
+                    $(".popup, .popup-content").addClass("active");
+                    $("header").css('opacity','0.2');
+                    $("section").css('opacity','0.2');
+                    $(".popup-content").css('opacity','1');
+                })
+
+                    
+                $("#submit").click(function(){
+                    $("#code").val(code);
+                    console.log($("#code").val());
+                    $.ajax({
+                        type:'POST',
+                        url: "_phpscripts/dataEdition.php",
+                        data:$('#editForm').serialize(),
+                        success: function(data){
+                            location.reload();
+                        }
+                        });
+                    $(".popup, .popup-content").removeClass('active');
+                    $("header").css('opacity','1');
+                    $("section").css('opacity','1')
+                    })
+                   
+        
                 $("#deletebutton").click(function(){
                     $.ajax({
                         type:'GET',
@@ -122,10 +186,13 @@
                         success: function(data){
                             location.reload();
                         }
-
                     })
                 })
             });
         });
+    </script>
+
+<script>
+   
     </script>
 </html>
