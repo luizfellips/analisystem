@@ -1,5 +1,15 @@
 # Analisystem
-A C.R.U.D system I've been working on to improve my notions of Javascript(jQuery), HTML, CSS(Bootstrap), PHP and MySQL. It is also responsive.
+A C.R.U.D system I've been working on to improve my notions of front-end and back-end simultaneously.
+## Technologies used:
+
+- HTML
+- CSS
+- Bootstrap 5
+- Javascript
+- jQuery
+- PHP
+- MySQL
+- Git e Github
 
 <table>
 <th colspan=2>Images</th>
@@ -36,5 +46,4 @@ A C.R.U.D system I've been working on to improve my notions of Javascript(jQuery
 </tr>
 
 </table>
-
 
