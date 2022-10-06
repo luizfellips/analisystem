@@ -149,8 +149,13 @@
                 $.ajax({
                     type: 'GET',
                     url: '_phpscripts/dataProcess.php',
-                    data: {Valor: valorVendido, KeyUser: localStorage.getItem('Usuário')},
-                    success: clearAll()
+                    data: {Valor: valorVendido, KeyUser: localStorage.getItem('Usuário'),quantities},
+                    success: function(data){
+                        clearAll();
+                        alert(data);
+                        var precos = $.parseJSON(data);
+                        localStorage.setItem()
+                    }
                 })
         })
     })
@@ -169,6 +174,7 @@
     })
 </script>
 <script>
+    var quantities = {};
     $(document).ready(function() {
         $("#productRetrieving").submit(function(e){
             e.preventDefault()
@@ -183,6 +189,8 @@
                 success: function(data){
                     var array = $.parseJSON(data);
                     loadPrices(array);
+                    quantities[array['id']] = array['quantity'];
+                    console.log(quantities);
                 }
             })
             })

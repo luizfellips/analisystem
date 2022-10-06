@@ -136,7 +136,8 @@
                                 affixesStay: true})
                         }))
                     </script>
-                    <button class="btn btn-danger close mt-2" name="submit" type="button" id="submit">Close</button>
+                    <button class="btn btn-danger close mt-2" name="submit" type="button" id="submit">Update</button>
+                    <button class="btn btn-danger close mt-2 mx-2" type="button" id="close">Close</button>
             </div>
         </div>
        
@@ -150,7 +151,8 @@
             $('table tbody tr').click(function(){
                 $(this).css('--bs-table-bg', '#a03838');
                 $(this).css('--bs-table-striped-bg', '#eb6c6c');
-                var code = $(this).text().substring(0,3);
+                var firstCharOcurrence = $(this).text().search(/\D/i);
+                var code = $(this).text().substring(0,firstCharOcurrence);
 
                 $("#editbutton").click(function(){
                     $("#code").val(code);
@@ -163,7 +165,6 @@
                     
                 $("#submit").click(function(){
                     $("#code").val(code);
-                    console.log($("#code").val());
                     $.ajax({
                         type:'POST',
                         url: "_phpscripts/dataEdition.php",
@@ -176,7 +177,11 @@
                     $("header").css('opacity','1');
                     $("section").css('opacity','1')
                     })
-                   
+                $("#close").click(function(){
+                    $(".popup, .popup-content").removeClass('active');
+                    $("header").css('opacity','1');
+                    $("section").css('opacity','1')
+                })
         
                 $("#deletebutton").click(function(){
                     $.ajax({
