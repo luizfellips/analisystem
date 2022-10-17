@@ -64,18 +64,15 @@
     })
 </script>
 <script>
+    var keyUser = 'Usuário';
+    var keyTime = 'Horário de Abertura';
+    const date = new Date();
         $("#user1").click(function(){
-            let keyUser = 'Usuário';
-            let keyTime = 'Horário de Abertura';
-            const date = new Date();
             var current_time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
             localStorage.setItem(keyUser, 'Alanis Helen');
             localStorage.setItem(keyTime, current_time);
         });
         $("#user2").click(function(){
-            let keyUser = 'Usuário';
-            let keyTime = 'Horário de Abertura';
-            const date = new Date();
             var current_time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
             localStorage.setItem(keyUser, 'Fellipe Souza');
             localStorage.setItem(keyTime, current_time);

@@ -117,7 +117,7 @@
                  <h3 class="title text-center mt-2" id="produto">Code</h3> 
                 <input type="text" class="form-control" name="CodeKey" id="code" placeholder="Actual Code" value=000 required/>
                 <h3 class="title text-center mt-2" id="produto">Name of Product</h3> 
-                <input type="text" class="form-control" name="NameKey" id="nome" placeholder="Product Name" required>
+                <input type="text" class="form-control" name="NameKey" id="name" placeholder="Product Name" required>
             </div>
             <div class="col">
                 <h3 class="title text-center mt-2">Quantity</h3>
@@ -148,21 +148,29 @@
 </body>
 <script>
         $(document).ready(function(){
+            
             $('table tbody tr').click(function(){
-                $(this).css('--bs-table-bg', '#a03838');
-                $(this).css('--bs-table-striped-bg', '#eb6c6c');
-                var firstCharOcurrence = $(this).text().search(/\D/i);
-                var code = $(this).text().substring(0,firstCharOcurrence);
-
+                $('table tbody tr').not(this).removeClass('selectRow');
+                $(this).addClass("selectRow");
+                var name = getName($(".selectRow"));
+                var code = getCode($(".selectRow"));
+                console.log(code);
+                $("#deletebutton").click(function(){
+                    console.log(code);
+                    $.ajax({
+                        type:'GET',
+                        url: "_phpscripts/dataDelete.php",
+                        data: {Key: code},
+                    })
+                })
                 $("#editbutton").click(function(){
                     $("#code").val(code);
+                    $("#name").val(name);
                     $(".popup, .popup-content").addClass("active");
                     $("header").css('opacity','0.2');
                     $("section").css('opacity','0.2');
                     $(".popup-content").css('opacity','1');
                 })
-
-                    
                 $("#submit").click(function(){
                     $("#code").val(code);
                     $.ajax({
@@ -182,18 +190,8 @@
                     $("header").css('opacity','1');
                     $("section").css('opacity','1')
                 })
-        
-                $("#deletebutton").click(function(){
-                    $.ajax({
-                        type:'GET',
-                        url: "_phpscripts/dataDelete.php",
-                        data: {Key: code},
-                        success: function(data){
-                            location.reload();
-                        }
-                    })
-                })
             });
+            
         });
     </script>
 

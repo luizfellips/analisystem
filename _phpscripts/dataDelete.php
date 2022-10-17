@@ -5,6 +5,5 @@
         $code = $data;
         $statement = "DELETE FROM products WHERE productCode = '$code'";
         mysqli_query($sqlconnection,$statement) or die(mysqli_error($sqlconnection));
-        echo $code;
     }
 ?>

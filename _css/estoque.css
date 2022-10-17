@@ -64,7 +64,7 @@ body{
 }
 
 .dropdown-item:hover{
-    background-color: rgb(255, 91, 91);
+    color: white;
     transition: 0.3s;
 }
 .nav-link {

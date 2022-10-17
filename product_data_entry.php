@@ -98,7 +98,7 @@
                                 <th><?php echo $productCode;?></th>
                                 <td><?php echo $nameOfProduct;?></td>
                                 <td><?php echo $quantity;?></td>
-                                <td>R$ <?php echo $price;?></td>
+                                <td>R$ <?php echo $unformattedPrice;?></td>
                                 <td><?php echo $providerContact;?></td>
                                 <td><?php echo $providerNumber;?></td>
                             </tr>

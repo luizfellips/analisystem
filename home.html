@@ -144,6 +144,14 @@
 </body>
 <script>
     $(document).ready(function(){
+        var quantities = {};
+        if(localStorage.length > 0){
+            var user = localStorage.getItem('Usuário');
+            $('#username').text(user);
+        }
+        $("#clearAll").click(function(){
+            clearAll();
+        });
         $("#closeConsultation").click(function(){
                 var valorVendido = $("#total").text();
                 $.ajax({
@@ -152,30 +160,9 @@
                     data: {Valor: valorVendido, KeyUser: localStorage.getItem('Usuário'),quantities},
                     success: function(data){
                         clearAll();
-                        alert(data);
-                        var precos = $.parseJSON(data);
-                        localStorage.setItem()
                     }
                 })
         })
-    })
-    $(document).ready(function(){
-        $("#clearAll").click(function(){
-            clearAll();
-        });
-    })
-</script>
-<script>
-    $(document).ready(function() {
-            if(localStorage.length > 0){
-                var user = localStorage.getItem('Usuário');
-                $('#username').text(user);
-            }
-    })
-</script>
-<script>
-    var quantities = {};
-    $(document).ready(function() {
         $("#productRetrieving").submit(function(e){
             e.preventDefault()
             var formData = {

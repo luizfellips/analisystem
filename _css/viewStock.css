@@ -64,7 +64,7 @@ body{
 }
 
 .dropdown-item:hover{
-    background-color: rgb(255, 91, 91);
+    color: white;
     transition: 0.3s;
 }
 .nav-link {
@@ -137,4 +137,9 @@ table tbody tr:hover {
 .popup-content.active body{
     background-color: #353535ad;
 
+}
+
+.selectRow {
+    --bs-table-bg: #a03838;
+    --bs-table-striped-bg:#eb6c6c;
 }

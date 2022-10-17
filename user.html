@@ -118,7 +118,6 @@
 <script>
     let item = localStorage.getItem('Usuário');
     let current_time = localStorage.getItem('Horário de Abertura');
-    console.log(current_time)
     $.ajax({
         type: "GET",
         url: "_phpscripts/localStorageLoad.php",

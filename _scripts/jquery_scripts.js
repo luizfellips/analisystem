@@ -53,3 +53,18 @@ function clearAll(){
   $("#unitPrice").text("R$0,00");
   $("#unitSum").text("R$0,00");
 }
+
+
+function getName(obj){
+  var firstCharOcurrence = obj.text().search(/\D/i);
+  var stringStartingFromChar = obj.text().substring(firstCharOcurrence);
+  var secondDigitOcurrence = stringStartingFromChar.search(/\d/);
+  var name = stringStartingFromChar.substring(0,secondDigitOcurrence);
+  return name;
+};
+
+function getCode(obj){
+  var firstCharOcurrence = obj.text().search(/\D/i);
+  var code = obj.text().substring(0,firstCharOcurrence);
+  return code;
+}
